@@ -9,7 +9,7 @@ html, body {
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    padding: 15px;
+    padding: 25px;
     background-color: white;
     opacity: 0.8;
     /* text-align: justify; */
@@ -21,19 +21,28 @@ html, body {
     }
 }
 
-
 .mybtn {
-    background-color: #D88D00;
+    /* background-color: #D88D00; */
     height: 50px;
     margin: auto;
 }
 
 .schedule {
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 40px;
-    padding: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 20px;
     border: 1px solid #246049;
     border-radius: 5px;
+    font-size: 12px;
+}
+
+h5 {
+    font-size: 16px;
+}
+.table{
+    margin-bottom: 20px;
 }
 
 /* Footer  */
@@ -53,4 +62,17 @@ html, body {
 .footer a {
     color:#ffffff;
     text-decoration:none;
+}
+
+/* Navigation */
+.navbar-nav a {
+    color: red;
+}
+
+.btn-primary {
+    background-color: #D88D00;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    background-color: #D88D00;
 }

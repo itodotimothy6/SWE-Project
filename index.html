@@ -17,7 +17,7 @@
     <!-- My CSS  -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Computer Science Advicing System</title>
+    <title>PSC Advising System</title>
 </head>
 
 <body>
@@ -39,7 +39,6 @@
             </div>
         </div>
     </nav>
-
 
     <div class="container">
         <!-- Form -->
@@ -67,27 +66,35 @@
             <div class="form-group row">
                 <div class="col">
                     <label for="exampleFormControlSelect1">Expected Graduation Date</label> <br>
-                    <select class="selectpicker" title="Expexted Graduation" data-width="100%">
-                        <option>Fall '20</option>
-                        <option>Spring '20</option>
-                        <option>Fall '21</option>
-                        <option>Spring '21</option>
-                        <option>Fall '22</option>
-                        <option>Spring '22
-                        <option>Fall '20</option>
-                        <option>Spring '20</option>
-                        </option>
-                    </select>
+                    <div class="row">
+                        <div class="col-3">
+                            <select class="selectpicker" title="Semester" data-width="100%">
+                                <option>Fall</option>
+                                <option>Spring</option>
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select class="selectpicker" title="Year" data-width="100%">
+                                <option>2020</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                            </select>
+                        </div>
+                    </div>
+
+
 
                 </div>
             </div>
             <div class="form-group row">
 
                 <div class="col-7">
-                    <label for="exampleFormControlSelect1">Enter Max no of Hours per semester</label>
+                    <label for="exampleFormControlSelect1">Enter max no. of Hours per semester</label>
                     <input class="form-control" type="number" min="0" max="20" id="value_of_item">
                     <small id="passwordHelpBlock" class="form-text text-muted">
-                        Between 8 - 20
+                        Between 12 - 20
                     </small>
                 </div>
             </div>
@@ -99,7 +106,7 @@
             </div>
         </form>
 
-
+        <!-- schedule  -->
         <div class="schedule">
             <h5>Spirng 2020</h5>
             <table class="table">
@@ -112,7 +119,6 @@
                         <th scope="row">Intro to Comp Sci</th>
                         <td>3 hrs</td>
                     </tr>
-
                     <tr>
                         <th scope="row">Calculus</th>
                         <td>3 hrs</td>
@@ -141,15 +147,52 @@
                 </tbody>
             </table>
 
+            <h5>Spring 2022</h5>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Algo & DS</th>
+                        <td>3 hrs</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Intro to Comp Sci</th>
+                        <td>3 hrs</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Calculus</th>
+                        <td>3 hrs</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <h5>Fall 2022</h5>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Algo & DS</th>
+                        <td>3 hrs</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Intro to Comp Sci</th>
+                        <td>3 hrs</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Calculus</th>
+                        <td>3 hrs</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
             <div class="row">
                 <div class="col text-center">
                     <button type="Estimate" class="mybtn btn btn-primary">Download as PDF</button>
                 </div>
             </div>
         </div>
-
-
-
     </div>
 
     <footer class="footer" id="footer">
