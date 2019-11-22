@@ -6,7 +6,7 @@ html, body {
 
 .container {
     border: 1px solid #246049;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 20px;
     border-radius: 5px;
     padding: 25px;
@@ -27,16 +27,7 @@ html, body {
     margin: auto;
 }
 
-.schedule {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-right: 20px;
-    margin-left: 20px;
-    padding: 20px;
-    border: 1px solid #246049;
-    border-radius: 5px;
-    font-size: 12px;
-}
+
 
 h5 {
     font-size: 16px;
@@ -52,6 +43,8 @@ h5 {
     background-color: #D88D00;
     padding-top: 30px;
     padding-bottom: 10px;
+    position: relative;
+    top: 150px;
 }
 
 .footer p {
@@ -75,4 +68,20 @@ h5 {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
     background-color: #D88D00;
+}
+
+#schedule {
+    display: none;
+}
+
+.schedule {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 20px;
+    border: 1px solid #246049;
+    border-radius: 5px;
+    font-size: 12px;
+    display: none;
 }
