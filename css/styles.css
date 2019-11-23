@@ -85,3 +85,7 @@ h5 {
     font-size: 12px;
     display: none;
 }
+
+.form-group {
+    margin-top: 20px;
+}
