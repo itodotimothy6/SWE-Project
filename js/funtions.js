@@ -32,7 +32,7 @@ function generate(selected) {
                 <tr>
                     <th scope="row">` + notSelected[i] + `</th>
                     <td>3 hrs</td>
-                </tr>`        
+                </tr>`
         table_body_content += row;
     }
 
@@ -41,7 +41,7 @@ function generate(selected) {
 
     var button_html = `
                     <div class="col text-center">
-                        <button type="button" class="mybtn btn btn-primary">Download as PDF</button>
+                        <button type="button" onclick="genPDF()" class="mybtn btn btn-primary">Download as PDF</button>
                     </div>`
     var pdf_button = document.createElement("div");
     pdf_button.setAttribute("class", "row");
@@ -65,4 +65,17 @@ function generate(selected) {
 
     document.getElementById("schedule").style.display = "block";
 
+}
+
+
+function genPDF() {
+    console.log("working");
+    var schedule = document.getElementById("schedule");
+
+    let doc = new jsPDF('p', 'pt', 'a4');
+    doc.addHTML(schedule, function () {
+        doc.save('test.pdf');
+    });
+
+   
 }
