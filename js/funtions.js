@@ -1,28 +1,23 @@
-var options = ["Programming I", "Programming II", "Applied Computer Science", "College Algebra", "College Trigonometry", "Data Structures", "Object-Oriented Programming", "Calculus I", "Calculus II", "Introduction to Computer System", "Operating Systems", "Computer Organization I", "Discrete Mathematics", "College Chemistry I", "College Chemistry II", "General Physics I", "General Physics II", "Software Engineering", "Algorithm Analysis and Design", "Linear Algebra", "Networking", "Programming Languages", "Introduction to Database", "Computer Science Research", "Computer Security and Privacy", "CS Capstone Project"];
-
 function populate() {
-
     var select = document.getElementById("courses");
 
-    console.log("running......");
+    for (code in options) {
 
-    for (var i = 0; i < options.length; i++) {
-        var opt = options[i];
+        var opt = code + " " + options[code];
         var el = document.createElement("option");
         el.text = opt;
         el.value = opt;
 
         select.appendChild(el);
     }
-
 }
 
 function generate(selected) {
     var set = new Set(selected);
     var notSelected = new Array();
-    for (var i = 0; i < options.length; i++) {
-        if (!set.has(options[i])) {
-            notSelected.push(options[i]);
+    for (code in options) {
+        if (!set.has(code + " " + options[code])) {
+            notSelected.push(code + " " + options[code])
         }
     }
 
@@ -54,8 +49,8 @@ function generate(selected) {
     var heading = document.createElement("div");
     heading.innerHTML = `
                 <h4>` + document.getElementById("fName").value + ` ` + document.getElementById("lName").value + `</h4>
-                <h5>Courses left to complete</h5>
-    `
+                <h4>` + document.getElementById("studentID").value  + `</h4>
+                <h5>Courses in CS Major left to complete</h5>`
 
     table.appendChild(tbody);
 
@@ -67,15 +62,13 @@ function generate(selected) {
 
 }
 
-
 function genPDF() {
     console.log("working");
     var schedule = document.getElementById("schedule");
 
     let doc = new jsPDF('p', 'pt', 'a4');
     doc.addHTML(schedule, function () {
-        doc.save('test.pdf');
+        doc.save("test.pdf");
+        // doc.save(document.getElementById("studentID").value + "_CSNotComplete");
     });
-
-   
 }
