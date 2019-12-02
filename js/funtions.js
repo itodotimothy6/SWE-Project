@@ -40,6 +40,7 @@ function generate(selected) {
                     </div>`
     var pdf_button = document.createElement("div");
     pdf_button.setAttribute("class", "row");
+    pdf_button.setAttribute("id", "pdf_button");
     pdf_button.innerHTML = button_html;
 
     var table = document.createElement("table");
@@ -49,13 +50,18 @@ function generate(selected) {
     var heading = document.createElement("div");
     heading.innerHTML = `
                 <h4>` + document.getElementById("fName").value + ` ` + document.getElementById("lName").value + `</h4>
-                <h4>` + document.getElementById("studentID").value  + `</h4>
+                <h4>` + document.getElementById("studentID").value + `</h4>
                 <h5>Courses in CS Major left to complete</h5>`
 
     table.appendChild(tbody);
 
+    var total = document.createElement("div");
+    total.setAttribute("id", "total");
+    total.innerHTML = `<h6> Total hours needed: ` + notSelected.length * 3 + `/72</h6>`;
+
     document.getElementById("schedule").appendChild(heading);
     document.getElementById("schedule").appendChild(table);
+    document.getElementById("schedule").appendChild(total);
     document.getElementById("schedule").appendChild(pdf_button);
 
     document.getElementById("schedule").style.display = "block";
@@ -65,10 +71,14 @@ function generate(selected) {
 function genPDF() {
     console.log("working");
     var schedule = document.getElementById("schedule");
+    document.getElementById("pdf_button").style.display = "none";
 
     let doc = new jsPDF('p', 'pt', 'a4');
-    doc.addHTML(schedule, function () {
-        doc.save("test.pdf");
-        // doc.save(document.getElementById("studentID").value + "_CSNotComplete");
+
+    var opt = { pagesplit: true };
+
+    doc.addHTML(schedule, opt, function () {
+        // doc.save("test.pdf");
+        doc.save(document.getElementById("studentID").value + "_CSNotComplete");
     });
 }
